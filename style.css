@@ -1,0 +1,416 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+input, button, textarea, select {
+    font: inherit;
+}
+
+/* * * * || VARIABLES * * * */
+:root {
+    /* FONTS & SIZES */
+    --FONT-FAMILY: 'Inter', sans-serif;
+    --FONT-400: 400;
+    --FONT-700: 700;
+    
+    /*** COLORS ***/
+    /* Primary */
+    --GREEN: hsl(163, 72%, 41%);
+    --BRIGHT-RED: hsl(356, 69%, 56%);
+    --FB-BLUE: hsl(208, 92%, 53%);
+    --TWITTER-BLUE: hsl(203, 89%, 53%);
+    --YT-RED: hsl(348, 97%, 39%);
+
+    /* Dark Theme */
+    --GRAY-TEXT: hsl(228, 34%, 66%);
+    --TEXT: hsl(0, 0%, 100%);
+    --BACKGROUND: hsl(230, 17%, 14%);
+    --TOP-BACKGROUND: hsl(232, 19%, 15%);
+    --CARD: hsl(228, 28%, 20%);
+    --CARD-HOVER: hsl(228, 25%, 27%);
+}
+.light-theme {
+    --GRAY-TEXT: hsl(228, 12%, 44%);
+    --TEXT: hsl(230, 17%, 14%);
+    --BACKGROUND: hsl(0, 0%, 100%);
+    --TOP-BACKGROUND: hsl(225, 100%, 98%);
+    --CARD: hsl(227, 47%, 96%);
+    --CARD-HOVER: hsl(228, 33%, 91%);;
+}
+/* Instagram: linear gradient hsl(37, 97%, 70%) to hsl(329, 70%, 58%) */
+/* - Toggle: linear gradient hsl(210, 78%, 56%) to hsl(146, 68%, 55%) */
+/* Toggle: hsl(230, 22%, 74%) */
+
+/* * * * || GENERAL STYLES * * * */
+html, body {
+    height: 100%;
+}
+html {
+    scroll-behavior: smooth;
+}
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-family: var(--FONT-FAMILY);
+    background-color: var(--BACKGROUND);
+}
+
+/* * * * || PLANS * * * */
+
+.switch__parent {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    
+}
+.upper__title {
+    font-weight: var(--FONT-700);
+    font-size: 1.75rem;
+    color: var(--TEXT);
+}
+.plan {
+    font-weight: var(--FONT-700);
+    font-size: .875rem;
+    text-align: right;
+    max-width: 5rem;
+    color: var(--TEXT);
+}
+.total {
+    font-weight: var(--FONT-700);
+    font-size: .875rem;
+    color: var(--GRAY-TEXT);
+}
+
+/* * * * || TOGGLE SWITCH * * * */
+/* Source:  https://www.w3schools.com/howto/howto_css_switch.asp */
+   /* The switch - the box around the slider */
+.plan__options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    color: var(--DARK-BLUE);
+    max-width: 280rem;
+    justify-items: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 56px;
+    height: 32px;
+}
+  /* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+  /* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(225deg, #40DB82 0%, #388FE7 98.02%);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 24px;
+    width: 24px;
+    left: 3px;
+    bottom: 4px;
+    background-color:#333A55;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+input:checked + .slider {
+    background: #AEB3CB;
+}
+input:hover + .slider {
+    background: linear-gradient(225deg, #40DB82 0%, #388FE7 98.02%);
+}
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+    background-color:  white;
+}
+   /* Rounded sliders */
+.slider.round {
+    border-radius: 16px;
+}
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* * * * || OPTION CARDS * * * */
+.social {
+    background-color: var(--CARD);
+    border: none;
+    border-radius: 5px;
+    max-width: 16rem;
+    color: var(--GRAY-TEXT);
+}
+.social__handle {
+    display: flex;
+    margin-top: 2rem;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+.facebook {
+    border-top: 4px solid #178FF5;
+}
+.twitter {
+    border-top: 4px solid #1DA1F2;
+}
+.instagram {
+    background: linear-gradient(var(--CARD), var(--CARD)) padding-box,
+                linear-gradient(225deg, #DF4896 0%, #EE877E 50.91%, #FDC366 100%) border-box;
+    border-radius: 5px;
+    border-top: 4px solid transparent;
+}
+.youtube {
+    border-top: 4px solid #C4032B;
+}
+.amounts {
+    font-weight: var(--FONT-700);
+    text-align: center;
+    letter-spacing: -2px;
+    color: var(--TEXT);
+
+}
+.followers {
+    text-transform: uppercase;
+    font-weight: var(--FONT-400);
+    text-align: center;
+    letter-spacing: 5px;
+    color: var(--GRAY-TEXT);
+}
+.trending {
+    display: grid;
+    grid-template-columns: .5em 4.5em;
+    padding-bottom: 1.5em;
+    padding-top: 1.5em;
+    margin: 0 auto;
+}
+.today {
+    font-size: .75rem;
+    font-weight: var(--FONT-700);
+    color: var(--GREEN);
+}
+.down { 
+    color: var(--BRIGHT-RED);
+}
+.overview__title {
+    font-weight: var(--FONT-700);
+    font-size: 1.5rem;
+    color: var(--TEXT);
+}
+.benchmark {
+    background-color: var(--CARD);
+    border: none;
+    border-radius: 5px;
+    color: var(--GRAY-TEXT);
+    margin-top: 1.5rem;
+    
+}
+.engagement {
+    display: grid;
+    grid-template-columns: 6rem 1.25rem;
+    
+}
+.touchpoints {
+    font-weight: var(--FONT-700);
+    font-size: .875rem;
+}
+.social-media-icon {
+    display: inline-block;
+    align-self: center;
+    justify-self: right;
+}
+.statistics {
+    display: grid;
+    grid-template-columns: 5.5rem 2rem;
+    
+}
+.connections {
+    font-weight: var(--FONT-700);
+    font-size: 2rem;
+    color: var(--TEXT);
+}
+.percentage {
+    display: grid;
+    grid-template-columns: .5rem 3rem;
+    max-width: 3.5rem;
+    margin-top: 1.25rem;
+    align-content: center;
+    justify-content: center;
+}
+.percent {
+    font-weight: var(--FONT-700);
+    font-size: .75rem;
+    color: var(--GREEN);
+    text-align: center;
+}
+.downward {
+    color: var(--BRIGHT-RED);
+}
+.arrow {
+    display: inline-block;
+    align-self: center;
+}
+.attribution { 
+    margin-top: 4rem;
+    font-size: 11px; 
+    text-align: center; 
+    color: var(--GRAY-TEXT);
+}
+.attribution a { 
+    color: var(--TEXT);
+}
+
+/* * * * || MEDIA QUERIES * * * */
+@media screen and (max-width: 1007px){
+    .upper__section {
+        max-width: 20.5rem;
+        margin-top: 2.25rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .upper__left {
+        border-bottom: 1px solid #333A55;
+        padding-bottom: 1.5rem;
+    }
+    .upper__title {
+        font-size: 1.5rem;
+    }
+    .switch__parent {
+        padding-top: 1.5rem;
+        max-width: 20.5rem;
+        gap: 11rem;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .switch {
+        justify-self: right;
+    }
+    .plan {
+        color: var(--GRAY-TEXT);
+        max-width: 6em;
+    }
+    .social {
+        display: grid;
+        margin-top: 2.5em;
+        max-width: 20.5em;
+        /* max-height: 13.5rem; */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .amounts {
+        font-size: 3.5rem;
+    }
+    .followers {
+        font-size: .75rem;
+    }
+    .overview__title {
+        margin-top: 2.875em;
+    }
+    .bottom__section {
+        max-width: 20.5em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .benchmark {
+        max-width: 20.5em;
+        padding: 1.65rem;
+    }
+    .engagement {
+        max-width: 17rem;
+        justify-content: space-between;
+    }
+    .statistics {
+        max-width: 17rem;
+        justify-content: space-between;
+        margin-top: 1.25rem;
+    }
+    
+}
+
+@media screen and (min-width: 1008px){
+    .upper__section {
+        max-width: 70rem;
+        margin: 2rem auto;
+    }
+    .upper__container {
+        display: flex;
+        justify-content: space-between;
+    }
+    .switch__parent {
+        max-width: 10rem;
+        align-items: center;
+        justify-items: center;
+    }
+    .socials {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 70em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .amounts {
+        font-size: 3.em;
+        
+    }
+    .followers {
+        font-size: .75em;
+        margin-top: 9px;
+    }
+    .trending {
+        /* display: grid;
+        grid-template-columns: .5em 4.5em;
+        margin: 1.5em auto; */
+        max-width: 5.5em;
+        column-gap: .25em;
+    }
+    .overview {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        max-width: 70rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .overview__title {
+        max-width: 70rem;
+        margin: 2.85rem auto 1.5rem;
+        text-align: left;
+    }
+    .benchmark {
+        max-width: 16rem;
+        padding: 1.65rem;
+    }
+    .engagement {
+        max-width: 12.5rem;
+        justify-content: space-between;
+    }
+    .statistics {
+        max-width: 12.5rem;
+        justify-content: space-between;
+        margin-top: 1.25rem;
+    }
+}
